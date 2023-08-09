@@ -1,5 +1,5 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { useState } from "react";
+import { Button, Text, View } from "react-native";
 
 const Campus = (props) => {
   return (
@@ -17,7 +17,7 @@ const InstitutoFederal = (props) => {
   );
 };
 
-const App = () => {
+const App1 = () => {
   return (
     <>
       <InstitutoFederal sigla="IFAL" uf="AL" />
@@ -30,4 +30,19 @@ const App = () => {
   );
 };
 
-export default App;
+const App2 = () => {
+  const [cliques, setCLiques] = useState(0);
+
+  return (
+    <>
+      <Button
+        title="OK"
+        onPress={() => {
+          setCliques(cliques + 1);
+        }}
+      />
+      <Text>Quantidade de cliques: {cliques}</Text>
+    </>
+  );
+};
+export default App2;
